@@ -1,0 +1,111 @@
+/* ---------- Waybar: black & white pills with a touch of yellow ---------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* The bar itself is see-through, so only the pills show */
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+tooltip {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #ffffff;
+}
+
+/* ---------- Left pill: workspaces ---------- */
+
+#workspaces {
+    background-color: #000000;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    margin: 3px 0 0 8px;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: #6e6e6e;
+    background: transparent;
+    border-radius: 12px;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: #1a1a1a;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+}
+
+/* ---------- Center pill: clock ---------- */
+
+#clock {
+    background-color: #000000;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    margin-top: 3px;
+    padding: 0 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ---------- Right side: one shared pill ---------- */
+
+.modules-right {
+    background-color: #000000;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    margin: 3px 8px 0 0;
+    padding: 0 6px;
+}
+
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#cpu,
+#cpu_graph,
+#memory,
+#temperature {
+    padding: 0 10px;
+    margin: 5px 0;
+    color: #ffffff;
+    border-left: 1px solid #333333;
+}
+
+/* no divider before the first module in the pill */
+#pulseaudio {
+    border-left: none;
+}
+
+/* the one bit of yellow: the CPU graph line */
+#cpu_graph {
+    color: #f5c211;
+    border-left: none;
+    padding-left: 0;
+}
+
+/* dimmed / warning states, still black and white */
+#pulseaudio.muted,
+#network.disconnected {
+    color: #6e6e6e;
+}
+
+#temperature.critical {
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
